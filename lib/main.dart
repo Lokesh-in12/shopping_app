@@ -29,12 +29,12 @@ final GoRouter _router = GoRouter(routes: <RouteBase>[
   GoRoute(
       path: '/',
       name: 'home',
-      builder: (BuildContext context, GoRouterState state) => HomePage(),
+      builder: (BuildContext context, GoRouterState state) => const HomePage(),
       routes: [
         GoRoute(
           path: 'product/:id',
           name: 'product',
-          builder: (context, state) => ProductDetailPage(),
+          builder: (context, state) => const ProductDetailPage(),
         ),
         GoRoute(
           path: 'cart',

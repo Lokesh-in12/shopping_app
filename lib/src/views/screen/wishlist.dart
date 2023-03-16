@@ -16,16 +16,17 @@ class WishListPage extends StatelessWidget {
       if (productsController.WishList.isEmpty) {
         return Scaffold(
           appBar: AppBar(
-            title: Text("Your WishList"),
+            title: const Text("Your WishList"),
           ),
+          // ignore: prefer_const_constructors
           body: Center(
-            child: Text("No items in WishList"),
+            child: const Text("No items in WishList"),
           ),
         );
       }
       return Scaffold(
         appBar: AppBar(
-          title: Text("Your Wishlist"),
+          title: const Text("Your Wishlist"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),

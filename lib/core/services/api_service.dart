@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:shopping_app/src/models/product_model/product_model.dart';
-import 'package:shopping_app/core/services/exceptions.dart';
-import 'package:shopping_app/src/views/widgets/customDialogueBoxError.dart';
+import 'package:shopping_app/core/utils/helpers/exceptions.dart';
+import 'package:shopping_app/src/views/widgets/custom_dialogue_err.dart';
 
 class ApiService {
   static var client = Dio();

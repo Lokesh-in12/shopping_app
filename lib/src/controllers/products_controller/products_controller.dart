@@ -35,7 +35,6 @@ class ProductsController extends GetxController {
       if (productsData != []) {
         Products.value = productsData;
       }
-      print("products data = > $productsData");
     } catch (e) {
       throw ("err occured in prdCont in fetchProducts ");
     } finally {

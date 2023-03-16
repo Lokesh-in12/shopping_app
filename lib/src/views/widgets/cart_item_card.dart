@@ -2,11 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
 import 'package:shopping_app/src/controllers/cart_controller/cart_controller.dart';
-import 'package:shopping_app/src/models/product_model/product_model.dart';
-import 'package:shopping_app/src/views/widgets/Dialogue_box_confirm.dart';
-import 'package:shopping_app/src/views/widgets/customDialogueBoxError.dart';
+import 'package:shopping_app/src/views/widgets/confirm_dialogue_box.dart';
 
 // ignore: must_be_immutable
 class CartItemsCard extends StatelessWidget {
@@ -14,27 +11,6 @@ class CartItemsCard extends StatelessWidget {
   CartItemsCard({super.key, this.e});
 
   final cartController = Get.find<CartController>();
-
-  // ignore: non_constant_identifier_names
-  // void CustomDialogueBox(
-  //     BuildContext ctx, String title, String desc, ProductModel e) {
-  //   showDialog(
-  //       context: ctx,
-  //       builder: (context) => AlertDialog(
-  //             title: Text(title),
-  //             content: Text(desc),
-  //             actions: [
-  //               TextButton(
-  //                   onPressed: () => ctx.pop(), child: const Text("Cancel")),
-  //               TextButton(
-  //                   onPressed: () {
-  //                     ctx.pop();
-  //                     cartController.removeFromCart(e);
-  //                   },
-  //                   child: const Text("Ok")),
-  //             ],
-  //           ));
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -74,11 +50,8 @@ class CartItemsCard extends StatelessWidget {
                                       maxWidth: 180,
                                       child: Text(e.title.toString())),
                                   IconButton(
-                                      onPressed: () => ConfirmDialogue(
-                                          context,
-                                          "Are you sure you want to delete?",
-                                          "This will remove this item from the cart!",
-                                          e),
+                                      onPressed: () =>
+                                          ConfirmDialogue(context, "cart", e),
                                       icon: const Icon(
                                           CupertinoIcons.clear_thick))
                                 ],

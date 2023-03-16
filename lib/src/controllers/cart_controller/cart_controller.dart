@@ -5,7 +5,7 @@ class CartController extends GetxController {
   var cartItems = <ProductModel>[].obs;
 
   double get totalCartAmount =>
-      cartItems.fold(0, (sum, item) => sum + (item.price! * item.quan.value!));
+      cartItems.fold(0, (sum, item) => sum + (item.price! * item.quan.value));
 
   void addToCart(ProductModel product) {
     if (cartItems.contains(product)) {

@@ -10,7 +10,7 @@ import 'package:shopping_app/src/views/widgets/rec_product_card.dart';
 
 // ignore: must_be_immutable
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -23,9 +23,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    ProductsController(ctx: this.context);
+    ProductsController(ctx: context);
   }
 
   @override
@@ -58,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                           context.push('/wishList');
                         },
                         child: Row(
-                          children: [
+                          children: const [
                             Icon(
                               CupertinoIcons.heart_fill,
                               color: Colors.redAccent,
@@ -89,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   productsController.isLoading.value
                       ? Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
+                          padding: const EdgeInsets.only(left: 20, top: 20),
                           child: Wrap(
                             children: const [
                               LoadingShimmerWidget(),

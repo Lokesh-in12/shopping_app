@@ -20,19 +20,19 @@ class RecProductCard extends StatelessWidget {
         height: 335,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Color.fromARGB(255, 247, 245, 245)),
+            color: const Color.fromARGB(255, 247, 245, 245)),
         child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Stack(
               children: [
                 Column(
                   children: [
-                    Container(
+                    SizedBox(
                       width: 200,
                       height: 200,
                       child: e.image != null
                           ? Image.network(
-                              "${e.image.toString()}",
+                              e.image.toString(),
                               fit: BoxFit.cover,
                             )
                           : Image.network(
@@ -40,6 +40,7 @@ class RecProductCard extends StatelessWidget {
                               height: 50,
                             ),
                     ),
+                    // ignore: prefer_const_constructors
                     SizedBox(
                       height: 11,
                     ),
@@ -49,16 +50,13 @@ class RecProductCard extends StatelessWidget {
                         LimitedBox(
                           maxWidth: 100,
                           child: Text(
-                            "${e.title.toString()}",
-                            style: TextStyle(
+                            e.title.toString(),
+                            style: const TextStyle(
                                 fontSize: 12, fontWeight: FontWeight.bold),
                             maxLines: 2,
                           ),
                         ),
-                        // Text(
-                        //   "⭐ ${e.rating.rate.toString()} ",
-                        // ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         RatingBar.builder(
@@ -68,19 +66,18 @@ class RecProductCard extends StatelessWidget {
                           direction: Axis.horizontal,
                           allowHalfRating: true,
                           itemCount: 5,
-                          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                          itemBuilder: (context, _) => Icon(
+                          itemPadding:
+                              const EdgeInsets.symmetric(horizontal: 4.0),
+                          itemBuilder: (context, _) => const Icon(
                             CupertinoIcons.star_fill,
                             color: Colors.amber,
                             size: 2,
                           ),
-                          onRatingUpdate: (rating) {
-                            print(rating);
-                          },
+                          onRatingUpdate: (rating) {},
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
@@ -88,7 +85,7 @@ class RecProductCard extends StatelessWidget {
                       children: [
                         Text(
                           "\$ ${e.price.toString()}",
-                          style: TextStyle(fontSize: 17),
+                          style: const TextStyle(fontSize: 17),
                         ),
                         IconButton(
                             onPressed: () {
@@ -114,7 +111,6 @@ class RecProductCard extends StatelessWidget {
                                 (element) => element.id == e.id).favorite.value
                             ? CupertinoIcons.heart_fill
                             : CupertinoIcons.heart,
-                        // CupertinoIcons.add,
                         color: Colors.redAccent,
                       )),
                 )

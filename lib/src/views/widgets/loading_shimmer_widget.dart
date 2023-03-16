@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:card_loading/card_loading.dart';
 import 'package:shopping_app/src/views/widgets/shimmer_card.dart';
 
 class LoadingShimmerWidget extends StatelessWidget {
@@ -7,22 +6,20 @@ class LoadingShimmerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          ShimmerCard(),
-          ShimmerCard(),
-          ShimmerCard(),
-          ShimmerCard(),
-          ShimmerCard(),
-          ShimmerCard(),
-          ShimmerCard(),
-          ShimmerCard(),
-          SizedBox(
-            height: 10,
-          ),
-        ],
-      ),
+    return Column(
+      children: const <Widget>[
+        ShimmerCard(),
+        ShimmerCard(),
+        ShimmerCard(),
+        ShimmerCard(),
+        ShimmerCard(),
+        ShimmerCard(),
+        ShimmerCard(),
+        ShimmerCard(),
+        SizedBox(
+          height: 10,
+        ),
+      ],
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
 class DioExceptions implements Exception {
   String? message;
@@ -20,9 +19,6 @@ class DioExceptions implements Exception {
         break;
       case DioErrorType.sendTimeout:
         message = "Send Timeout in Connection with Api Server";
-        break;
-      case DioErrorType.connectionTimeout:
-        message = "Connection Timeout with Api Server";
         break;
 
       default:
