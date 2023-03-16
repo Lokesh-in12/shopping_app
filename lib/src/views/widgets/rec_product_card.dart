@@ -19,6 +19,7 @@ class RecProductCard extends StatelessWidget {
         width: 175,
         height: 335,
         decoration: BoxDecoration(
+            border: Border.all(color: Color.fromARGB(255, 240, 239, 239)),
             borderRadius: BorderRadius.circular(20),
             color: const Color.fromARGB(255, 247, 245, 245)),
         child: Stack(
@@ -28,15 +29,24 @@ class RecProductCard extends StatelessWidget {
                 SizedBox(
                   width: 200,
                   height: 200,
-                  child: e.image != null
-                      ? Image.network(
-                          e.image.toString(),
-                          fit: BoxFit.fill,
-                        )
-                      : Image.network(
-                          "https://cdn.shopify.com/s/files/1/1338/0845/collections/lippie-pencil_grande.jpg?v=1512588769",
-                          height: 50,
-                        ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.network(
+                      e.image.toString(),
+                      fit: BoxFit.fill,
+                      height: 150,
+                      width: 120,
+                    ),
+                  ),
+                  // child: e.image != null
+                  //     ? Image.network(
+                  //         e.image.toString(),
+                  //         fit: BoxFit.fill,
+                  //       )
+                  //     : Image.network(
+                  //         "https://cdn.shopify.com/s/files/1/1338/0845/collections/lippie-pencil_grande.jpg?v=1512588769",
+                  //         height: 50,
+                  //       ),
                 ),
                 // ignore: prefer_const_constructors
                 SizedBox(

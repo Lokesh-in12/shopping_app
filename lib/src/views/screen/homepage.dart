@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         )
                       : Padding(
-                          padding: const EdgeInsets.only(left: 10, top: 20),
+                          padding: const EdgeInsets.only(left: 14, top: 20),
                           child: Wrap(
                             spacing: 17,
                             runSpacing: 17,
