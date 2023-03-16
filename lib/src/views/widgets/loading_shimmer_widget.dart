@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:card_loading/card_loading.dart';
-import 'package:shopping_app/views/widgets/shimmer_card.dart';
+import 'package:shopping_app/src/views/widgets/shimmer_card.dart';
 
 class LoadingShimmerWidget extends StatelessWidget {
   const LoadingShimmerWidget({super.key});

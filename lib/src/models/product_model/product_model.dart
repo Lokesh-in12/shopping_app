@@ -12,7 +12,7 @@ class ProductModel {
   Rating? rating;
 
   final favorite = false.obs;
-  final quan = 0.obs;
+  final quan = 1.obs;
 
   ProductModel({
     this.id,

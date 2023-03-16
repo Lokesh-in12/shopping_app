@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/views/screen/cart_page.dart';
-import 'package:shopping_app/views/screen/homepage.dart';
+import 'package:shopping_app/src/views/screen/cart_page.dart';
+import 'package:shopping_app/src/views/screen/homepage.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shopping_app/views/screen/product_details.dart';
+import 'package:shopping_app/src/views/screen/product_details.dart';
+import 'package:shopping_app/src/views/screen/wishlist.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +40,12 @@ final GoRouter _router = GoRouter(routes: <RouteBase>[
           path: 'cart',
           name: 'cart',
           builder: (BuildContext context, GoRouterState state) => CartPage(),
-        )
+        ),
+        GoRoute(
+          path: 'wishList',
+          name: 'wishList',
+          builder: (BuildContext context, GoRouterState state) => WishListPage(),
+        ),
       ]),
 ]);
 
