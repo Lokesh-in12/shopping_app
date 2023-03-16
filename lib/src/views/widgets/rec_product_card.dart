@@ -21,101 +21,98 @@ class RecProductCard extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: const Color.fromARGB(255, 247, 245, 245)),
-        child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Stack(
+        child: Stack(
+          children: [
+            Column(
               children: [
-                Column(
-                  children: [
-                    SizedBox(
-                      width: 200,
-                      height: 200,
-                      child: e.image != null
-                          ? Image.network(
-                              e.image.toString(),
-                              fit: BoxFit.cover,
-                            )
-                          : Image.network(
-                              "https://cdn.shopify.com/s/files/1/1338/0845/collections/lippie-pencil_grande.jpg?v=1512588769",
-                              height: 50,
-                            ),
-                    ),
-                    // ignore: prefer_const_constructors
-                    SizedBox(
-                      height: 11,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        LimitedBox(
-                          maxWidth: 100,
-                          child: Text(
-                            e.title.toString(),
-                            style: const TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.bold),
-                            maxLines: 2,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        RatingBar.builder(
-                          itemSize: 14,
-                          initialRating: e.rating.rate,
-                          minRating: 1,
-                          direction: Axis.horizontal,
-                          allowHalfRating: true,
-                          itemCount: 5,
-                          itemPadding:
-                              const EdgeInsets.symmetric(horizontal: 4.0),
-                          itemBuilder: (context, _) => const Icon(
-                            CupertinoIcons.star_fill,
-                            color: Colors.amber,
-                            size: 2,
-                          ),
-                          onRatingUpdate: (rating) {},
+                SizedBox(
+                  width: 200,
+                  height: 200,
+                  child: e.image != null
+                      ? Image.network(
+                          e.image.toString(),
+                          fit: BoxFit.fill,
                         )
-                      ],
+                      : Image.network(
+                          "https://cdn.shopify.com/s/files/1/1338/0845/collections/lippie-pencil_grande.jpg?v=1512588769",
+                          height: 50,
+                        ),
+                ),
+                // ignore: prefer_const_constructors
+                SizedBox(
+                  height: 11,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    LimitedBox(
+                      maxWidth: 100,
+                      child: Text(
+                        e.title.toString(),
+                        style: const TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold),
+                        maxLines: 2,
+                      ),
                     ),
                     const SizedBox(
-                      height: 5,
+                      height: 10,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "\$ ${e.price.toString()}",
-                          style: const TextStyle(fontSize: 17),
-                        ),
-                        IconButton(
-                            onPressed: () {
-                              cartController.addToCart(e);
-                            },
-                            icon: Icon(cartController.cartItems.contains(e)
-                                ? Icons.add_task_rounded
-                                : Icons.add_shopping_cart_rounded))
-                      ],
+                    RatingBar.builder(
+                      itemSize: 14,
+                      initialRating: e.rating.rate,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                      itemBuilder: (context, _) => const Icon(
+                        CupertinoIcons.star_fill,
+                        color: Colors.amber,
+                        size: 2,
+                      ),
+                      onRatingUpdate: (rating) {},
                     )
                   ],
                 ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                      onPressed: () {
-                        productsController.Products.firstWhere(
-                            (element) => element.id == e.id).favorite.toggle();
-                        productsController.addToWishList(e);
-                      },
-                      icon: Icon(
-                        productsController.Products.firstWhere(
-                                (element) => element.id == e.id).favorite.value
-                            ? CupertinoIcons.heart_fill
-                            : CupertinoIcons.heart,
-                        color: Colors.redAccent,
-                      )),
+                const SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "\$ ${e.price.toString()}",
+                      style: const TextStyle(fontSize: 17),
+                    ),
+                    IconButton(
+                        onPressed: () {
+                          cartController.addToCart(e);
+                        },
+                        icon: Icon(cartController.cartItems.contains(e)
+                            ? Icons.add_task_rounded
+                            : Icons.add_shopping_cart_rounded))
+                  ],
                 )
               ],
-            )),
+            ),
+            Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                  onPressed: () {
+                    productsController.Products.firstWhere(
+                        (element) => element.id == e.id).favorite.toggle();
+                    productsController.addToWishList(e);
+                  },
+                  icon: Icon(
+                    productsController.Products.firstWhere(
+                            (element) => element.id == e.id).favorite.value
+                        ? CupertinoIcons.heart_fill
+                        : CupertinoIcons.heart,
+                    color: Colors.redAccent,
+                  )),
+            )
+          ],
+        ),
       ),
     );
   }

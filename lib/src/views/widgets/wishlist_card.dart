@@ -23,7 +23,7 @@ class WishListCard extends StatelessWidget {
               border:
                   Border.all(color: const Color.fromARGB(255, 221, 220, 220))),
           width: double.infinity,
-          height: 150,
+          height: 145,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -32,14 +32,14 @@ class WishListCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
                     e.image.toString(),
-                    fit: BoxFit.contain,
+                    fit: BoxFit.fill,
                     height: 150,
-                    width: 100,
+                    width: 120,
                   ),
                 ),
               ),
               Container(
-                constraints: const BoxConstraints(maxWidth: 255),
+                constraints: const BoxConstraints(maxWidth: 245),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[

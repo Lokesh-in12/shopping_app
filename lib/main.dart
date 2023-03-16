@@ -44,26 +44,8 @@ final GoRouter _router = GoRouter(routes: <RouteBase>[
         GoRoute(
           path: 'wishList',
           name: 'wishList',
-          builder: (BuildContext context, GoRouterState state) => WishListPage(),
+          builder: (BuildContext context, GoRouterState state) =>
+              WishListPage(),
         ),
       ]),
 ]);
-
-// final GoRouter _router = GoRouter(
-//   routes: <RouteBase>[
-//     GoRouter(
-//       path: '/',
-//       builder: (BuildContext context, GoRouterState state) {
-//         return const HomeScreen();
-//       },
-//       routes: <RouteBase>[
-//         GoRoute(
-//           path: 'details',
-//           builder: (BuildContext context, GoRouterState state) {
-//             return const DetailsScreen();
-//           },
-//         ),
-//       ],
-//     ),
-//   ],
-// );

@@ -24,7 +24,7 @@ class CartItemsCard extends StatelessWidget {
                 children: <Widget>[
                   SizedBox(
                     width: double.infinity,
-                    height: 150,
+                    height: 145,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -32,13 +32,13 @@ class CartItemsCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                           child: Image.network(
                             e.image.toString(),
-                            fit: BoxFit.contain,
+                            fit: BoxFit.fill,
                             height: 150,
-                            width: 100,
+                            width: 120,
                           ),
                         ),
                         Container(
-                          constraints: const BoxConstraints(maxWidth: 255),
+                          constraints: const BoxConstraints(maxWidth: 245),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
@@ -47,7 +47,7 @@ class CartItemsCard extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   LimitedBox(
-                                      maxWidth: 180,
+                                      maxWidth: 150,
                                       child: Text(e.title.toString())),
                                   IconButton(
                                       onPressed: () =>
